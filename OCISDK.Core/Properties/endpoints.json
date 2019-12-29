@@ -1,0 +1,77 @@
+﻿{
+  "regionShortNames": {
+    "bom": "ap-mumbai-1",
+    "icn": "ap-seoul-1",
+    "syd": "ap-sydney-1",
+    "nrt": "ap-tokyo-1",
+    "phx": "us-phoenix-1",
+    "iad": "us-ashburn-1",
+    "fra": "eu-frankfurt-1",
+    "zrh": "eu-zurich-1",
+    "gru": "sa-saopaulo-1",
+    "lhr": "uk-london-1",
+    "yyz": "ca-toronto-1"
+  },
+  "services": {
+    "core": {
+      "version": "20160918",
+      "hosttag": "iaas"
+    },
+    "database": {
+      "version": "20160918",
+      "hosttag": "database"
+    },
+    "dns": {
+      "version": "20180115",
+      "hosttag": "dns"
+    },
+    "filestorage": {
+      "version": "20171215",
+      "hosttag": "filestorage"
+    },
+    "identity": {
+      "version": "20160918",
+      "hosttag": "identity"
+    },
+    "load_balancing": {
+      "version": "20170115",
+      "hosttag": "iaas"
+    },
+    "audit": {
+      "version": "20190901",
+      "hosttag": "audit"
+    },
+    "object_storage": {
+      "version": "20160918",
+      "hosttag": "objectstorage"
+    },
+    "my_service": {
+      "version": "v1",
+      "hosttag": "itra"
+    },
+    "search": {
+      "version": "20180409",
+      "hosttag": "query"
+    },
+    "monitoring": {
+      "version": "20180401",
+      "hosttag": "telemetry"
+    },
+    "monitoring-ingestion": {
+      "version": "20180401",
+      "hosttag": "telemetry-ingestion"
+    },
+    "waas": {
+      "version": "20181116",
+      "hosttag": "waas"
+    },
+    "commercial": {
+      "version": "20180827",
+      "hosttag": "commercial"
+    },
+    "usagecost": {
+      "version": "20190111",
+      "hosttag": "identity"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>k.furusawa</Authors>
+    <Company></Company>
+    <Description>Unofficial Oracle Cloud SDK for .NET.
+Supports several APIs.
+This SDK is unofficial and does not support all OCI services. It is also intended for personal research and limited project use only.
+Please be aware that the author is not responsible for any problems that may arise from using this SDK.
+Please send comments and requests for this SDK to GitHub.
+
+The RC version may contain bugs.
+Use the official version for important work.
+
+.Net向け非公式Oracle Cloud SDK。
+一部のAPIにのみ対応。
+本SDKは非公式であり、すべてのOCIサービスをサポートするものではありません。また、個人的な研究と限られたプロジェクトでの利用のみを想定しています。
+本SDKを利用したことで発生したいかなる問題に関して作成者は責任を負いかねますのでご了承ください。
+本SDKに対するご意見・ご要望はGitHubまでお願いします。
+
+RCバージョンにはバグが含まれている場合があります。
+重要な作業には公式バージョンを使用してください。
+</Description>
+    <Version>0.6.2</Version>
+    <PackageProjectUrl>https://github.com/KoutaFurusawa/oci-sdk-net</PackageProjectUrl>
+    <PackageReleaseNotes>
+2019/06/11 version 0.5.0 release
+2019/06/11 version 0.5.1 release
+2019/06/11 version 0.5.2 release
+2019/08/09 version 0.5.5-rc release
+2019/08/19 version 0.5.5 release
+2019/09/01 version 0.5.6-rc release
+2019/09/10 version 0.5.6 release
+2019/10/10 version 0.5.7-rc release
+2019/10/10 version 0.5.7.1-rc release
+2019/10/15 version 0.5.8-rc release
+2019/10/24 version 0.5.8 release
+2019/10/31 version 0.5.8.1-rc release
+2019/11/1 version 0.5.8.3-rc release
+2019/11/5 version 0.5.8.3 release
+2019/11/6 version 0.5.8.4-rc release
+2019/11/7 version 0.5.8.5-rc release
+2019/11/14 version 0.5.8.6-rc release
+2019/11/15 version 0.5.8.7-rc release
+2019/11/20 version 0.5.8.7 release
+2019/11/26 version 0.5.8.8-rc release
+2019/11/27 version 0.5.8.9 release
+2019/11/27 version 0.6.0-rc release
+    * Fixed project structure and deleted &lt;src&gt; directory.(issue #6)
+    * unpublished service ListServiceEntitlementRegistrationsResponse
+2019/11/27 version 0.6.1-rc release
+    * fixed get ObjectDetails request parameter.
+    * add WafTraffic APIs
+    * add WhiteList APIs
+    * add ChachingRule Apis
+2019/11/29 version 0.6.1.1-rc release
+    * Fixed nuget packaging settings.
+2019/12/05 version 0.6.2-rc release
+2019/12/09 version 0.6.2 release
+    * Check client settings so that each setting can be processed even when using sessions.(#21)
+    * add filesystem APIs</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2019, k.furusawa. Released under the MIT license</Copyright>
+    <RepositoryUrl>https://github.com/KoutaFurusawa/oci-sdk-net</RepositoryUrl>
+    <PackageTags>OracleCloud OracleCloudInfrastructure dotnet-core</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <SignAssembly>false</SignAssembly>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>0.6.2.0</AssemblyVersion>
+    <FileVersion>0.6.2.0</FileVersion>
+    <NeutralLanguage>en</NeutralLanguage>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\endpoints.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.8.5" />
+    <PackageReference Include="ErikEJ.EntityFrameworkCore.DgmlBuilder" Version="3.0.0" />
+    <PackageReference Include="Jil" Version="2.17.0" />
+    <PackageReference Include="Polly" Version="7.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ContainerService\Request\" />
+    <Folder Include="ContainerService\Response\" />
+  </ItemGroup>
+
+</Project>
