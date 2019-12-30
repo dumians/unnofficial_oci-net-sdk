@@ -2,11 +2,8 @@
 
 ## About
 
-.Net向け非公式Oracle Cloud SDK。
-一部のAPIにのみ対応。
-本SDKは非公式であり、すべてのOCIサービスをサポートするものではありません。また、個人的な研究と限られたプロジェクトでの利用のみを想定しています。
-本SDKを利用したことで発生したいかなる問題に関して作成者は責任を負いかねますのでご了承ください。
-本SDKに対するご意見・ご要望はGitHubまでお願いします。
+.Net Oracle Cloud SDK。
+
 
 Unofficial Oracle Cloud SDK for .NET.
 Supports several APIs.
@@ -24,9 +21,9 @@ https://www.nuget.org/packages/OCISDK.Core/
 
 ## License
 
-Copyright (c) 2019, k.furusawa
+Copyright (c) 2019,J Dumitru & k.furusawa
 
 Released under the MIT license
 
-https://github.com/KoutaFurusawa/oci-sdk-net/blob/master/OCISDK.Core/MIT-LICENSE.txt
+https://github.com/dumian/oci-net-sdk/blob/master/OCISDK.Core/MIT-LICENSE.txt
 
