@@ -15,10 +15,6 @@ Please send comments and requests for this SDK to GitHub.
 
 Examples can be found [here](/Example/).
 
-## Get NuGet
-
-https://www.nuget.org/packages/OCISDK.Core/
-
 ## License
 
 Copyright (c) 2019,J Dumitru & k.furusawa
