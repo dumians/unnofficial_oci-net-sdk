@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace OCISDK.Core.Audit
+namespace OCISDK.Core.Container
 {
     /// <summary>
     /// ContainerService
@@ -35,7 +35,7 @@ namespace OCISDK.Core.Audit
         /// <summary>
         /// Constructer
         /// </summary>
-        public AuditClientAsync(ClientConfigStream config) : base(config)
+        public ContainerServiceAsync(ClientConfigStream config) : base(config)
         {
             ServiceName = ContainerServiceName;
         }
@@ -43,7 +43,7 @@ namespace OCISDK.Core.Audit
         /// <summary>
         /// Constructer
         /// </summary>
-        public AuditClientAsync(ClientConfigStream config, OciSigner ociSigner) : base(config, ociSigner)
+        public ContainerServiceAsync(ClientConfigStream config, OciSigner ociSigner) : base(config, ociSigner)
         {
             ServiceName = ContainerServiceName;
         }
@@ -55,7 +55,7 @@ namespace OCISDK.Core.Audit
         /// <returns></returns>
         public async Task<ListEventsResponse> ListEvents(ListEventsRequest listRequest)
         {
-            var uri = new Uri($"{GetEndPoint(AuditServices.EVENT, this.Region)}?{listRequest.GetOptionQuery()}");
+            var uri = new Uri($"{GetEndPoint(ContainerService.EVENT, this.Region)}?{listRequest.GetOptionQuery()}");
             
             var webResponse = await this.RestClientAsync.Get(uri, new HttpRequestHeaderParam() { OpcRequestId = listRequest.OpcRequestId });
 
@@ -79,7 +79,7 @@ namespace OCISDK.Core.Audit
         /// <returns></returns>
         public async Task<GetConfigurationResponse> GetConfiguration(GetConfigurationRequest request)
         {
-            var uri = new Uri($"{GetEndPoint(AuditServices.CONFIGURATION, this.Region)}?compartmentId={request.CompartmentId}");
+            var uri = new Uri($"{GetEndPoint(ContainerService.CONFIGURATION, this.Region)}?compartmentId={request.CompartmentId}");
             
             var webResponse = await this.RestClientAsync.Get(uri);
 
@@ -102,7 +102,7 @@ namespace OCISDK.Core.Audit
         /// <returns></returns>
         public async Task<UpdateConfigurationResponse> UpdateConfiguration(UpdateConfigurationRequest updateRequest)
         {
-            var uri = new Uri($"{GetEndPoint(AuditServices.CONFIGURATION, this.Region)}?compartmentId={updateRequest.CompartmentId}");
+            var uri = new Uri($"{GetEndPoint(ContainerService.CONFIGURATION, this.Region)}?compartmentId={updateRequest.CompartmentId}");
             
             var webResponse = await this.RestClientAsync.Put(uri, updateRequest.updateConfigurationDetails);
 

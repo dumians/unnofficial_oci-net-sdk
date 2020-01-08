@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OCISDK.Core.Audit.Model
+namespace OCISDK.Core.Container.Model
 {
     /// <summary>
     /// All the attributes of an audit event. 
@@ -64,6 +64,6 @@ namespace OCISDK.Core.Audit.Model
         /// <summary>
         /// <para>Required: yes</para>
         /// </summary>
-        public DataDetails Data { get; set; }
+       // public DataDetails Data { get; set; }
     }
 }

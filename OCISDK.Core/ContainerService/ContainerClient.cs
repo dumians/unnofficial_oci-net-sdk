@@ -2,11 +2,12 @@
 using OCISDK.Core.Audit.Request;
 using OCISDK.Core.Audit.Response;
 using OCISDK.Core.Common;
+using OCISDK.Core.Container.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace OCISDK.Core.Audit
+namespace OCISDK.Core.Container
 {
     /// <summary>
     /// Container service
@@ -52,24 +53,24 @@ namespace OCISDK.Core.Audit
         /// </summary>
         /// <param name="listRequest"></param>
         /// <returns></returns>
-        public ListEventsResponse ListEvents(ListEventsRequest listRequest)
-        {
-            var uri = new Uri($"{GetEndPoint(ContainerService.EVENT, this.Region)}?{listRequest.GetOptionQuery()}");
+        //public ListEventsResponse ListEvents(ListEventsRequest listRequest)
+        //{
+        //    var uri = new Uri($"{GetEndPoint(ContainerService.EVENT, this.Region)}?{listRequest.GetOptionQuery()}");
             
-            var webResponse = this.RestClient.Get(uri, new HttpRequestHeaderParam() { OpcRequestId = listRequest.OpcRequestId });
+        //    var webResponse = this.RestClient.Get(uri, new HttpRequestHeaderParam() { OpcRequestId = listRequest.OpcRequestId });
 
-            using (var stream = webResponse.GetResponseStream())
-            using (var reader = new StreamReader(stream))
-            {
-                var response = reader.ReadToEnd();
-                return new ListEventsResponse()
-                {
-                    Items = JsonSerializer.Deserialize<List<ContainerEvent>>(response),
-                    OpcRequestId = webResponse.Headers.Get("opc-request-id"),
-                    OpcNextPage = webResponse.Headers.Get("opc-next-page")
-                };
-            }
-        }
+        //    using (var stream = webResponse.GetResponseStream())
+        //    using (var reader = new StreamReader(stream))
+        //    {
+        //        var response = reader.ReadToEnd();
+        //        return new ListEventsResponse()
+        //        {
+        //            Items = JsonSerializer.Deserialize<List<ContainerEvent>>(response),
+        //            OpcRequestId = webResponse.Headers.Get("opc-request-id"),
+        //            OpcNextPage = webResponse.Headers.Get("opc-next-page")
+        //        };
+        //    }
+        //}
 
         /// <summary>
         /// Get the configuration
@@ -78,7 +79,7 @@ namespace OCISDK.Core.Audit
         /// <returns></returns>
         public GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
         {
-            var uri = new Uri($"{GetEndPoint(AuditServices.CONFIGURATION, this.Region)}?compartmentId={request.CompartmentId}");
+            var uri = new Uri($"{GetEndPoint(ContainerService.CONFIGURATION, this.Region)}?compartmentId={request.CompartmentId}");
             
             var webResponse = this.RestClient.Get(uri);
 
@@ -101,7 +102,7 @@ namespace OCISDK.Core.Audit
         /// <returns></returns>
         public UpdateConfigurationResponse UpdateConfiguration(UpdateConfigurationRequest updateRequest)
         {
-            var uri = new Uri($"{GetEndPoint(AuditServices.CONFIGURATION, this.Region)}?compartmentId={updateRequest.CompartmentId}");
+            var uri = new Uri($"{GetEndPoint(ContainerService.CONFIGURATION, this.Region)}?compartmentId={updateRequest.CompartmentId}");
             
             var webResponse = this.RestClient.Put(uri, updateRequest.updateConfigurationDetails);
 

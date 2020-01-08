@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCISDK.Core.Audit
+namespace OCISDK.Core.Container
 {
     /// <summary>
     /// ContainerAuditClientAsync interface
@@ -17,7 +17,7 @@ namespace OCISDK.Core.Audit
         /// </summary>
         /// <param name="listRequest"></param>
         /// <returns></returns>
-        Task<ListEventsResponse> ListEvents(ListEventsRequest listRequest);
+        //Task<ListEventsResponse> ListEvents(ListEventsRequest listRequest);
 
         /// <summary>
         /// Get the configuration

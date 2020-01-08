@@ -5,10 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OCISDK.Core.Audit
+namespace OCISDK.Core.Container
 {
     /// <summary>
-    /// AuditClient interface
+    /// ContainerClient interface
     /// </summary>
     public interface IContainerServiceClient : IClientSetting
     {
@@ -17,7 +17,7 @@ namespace OCISDK.Core.Audit
         /// </summary>
         /// <param name="listRequest"></param>
         /// <returns></returns>
-        ListEventsResponse ListEvents(ListEventsRequest listRequest);
+   //     ListEventsResponse ListEvents(ListEventsRequest listRequest);
 
         /// <summary>
         /// Get the configuration
